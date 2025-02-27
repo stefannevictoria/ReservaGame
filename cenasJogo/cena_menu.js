@@ -4,7 +4,7 @@ class CenaMenu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("bg", "assets/menu_bg.png");
+        this.load.image("bg", "assets/menu_bg.PNG");
         this.load.image("logo", "assets/logoHackerados.png");
         this.load.image("button", "assets/botoes/playButton.png");
     }
@@ -23,7 +23,7 @@ class CenaMenu extends Phaser.Scene {
 
                 // Apenas agora adicionamos o evento para trocar de cena corretamente
                 this.cameras.main.once("camerafadeoutcomplete", () => {
-                    this.scene.start("CenaMenu"); // Troque para a cena correta
+                    this.scene.start("CenaTermo"); // Troque para a cena correta
                 });
             });
 
