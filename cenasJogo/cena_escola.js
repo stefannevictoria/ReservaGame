@@ -19,7 +19,7 @@ class CenaEscola extends Phaser.Scene {
         this.cameras.main.fadeIn(500);
         
         // Adicionando o fundo no centro do mapa sem redimensionamento
-        var background = this.add.image(496 / 2, 509 / 2, 'inSchool').setOrigin(0.5, 0.5);
+        var background = this.add.image(500 / 2, 515 / 2, 'inSchool').setOrigin(0.5, 0.5);
         
         // Criando o jogador
         this.player = this.physics.add.sprite(400, 400, "player").setScale(0.07);
@@ -67,7 +67,7 @@ class CenaEscola extends Phaser.Scene {
         this.cameras.main.setZoom(2); // Ajuste o valor conforme desejar
         
         // Configurar os limites do mundo e da câmera corretamente
-        this.physics.world.setBounds(0, 0, 496, 509);
+        this.physics.world.setBounds(-50, 0, 496, 509);
         this.cameras.main.setBounds(0, 0, 496, 509);
 
         // Ajustando o zoom da câmera
