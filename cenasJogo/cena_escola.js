@@ -7,9 +7,9 @@ class CenaEscola extends Phaser.Scene {
     preload(){
         this.load.image('inSchool', 'assets/fundosJogo/mapaOficial.png');
 
-        this.load.spritesheet("player", "assets/user_walk/playerAnim.png", {
-            frameWidth: 64,
-            frameHeight: 64
+        this.load.spritesheet("player", "assets/user_walk/Sprite_Lu.png", {
+            frameWidth: 1805,
+            frameHeight: 2394
         });
     }
 
@@ -20,38 +20,38 @@ class CenaEscola extends Phaser.Scene {
         
         // Adicionando o fundo e mudando a escala
         var background = this.add.image(767.5, 365, 'inSchool').setOrigin(0.5, 0.5);
-        background.setScale(1.5)
+        background.setScale(2.0);
         
         
         // Criando o jogador
-        this.player = this.physics.add.sprite(400, 400, "player").setScale(2.7);
+        this.player = this.physics.add.sprite(400, 400, "player").setScale(0.07);
         this.player.setCollideWorldBounds(true);
 
         // Criando animações
         this.anims.create({
             key: "andar-baixo",
-            frames: this.anims.generateFrameNumbers("player", { start: 0, end: 5 }),
+            frames: this.anims.generateFrameNumbers("player", { start: 0, end: 2 }),
             frameRate: 10,
             repeat: -1
         });
 
         this.anims.create({
             key: "andar-esquerda",
-            frames: this.anims.generateFrameNumbers("player", { start: 6, end: 11 }),
+            frames: this.anims.generateFrameNumbers("player", { start: 7, end: 8 }),
             frameRate: 10,
             repeat: -1
         });
 
         this.anims.create({
             key: "andar-direita",
-            frames: this.anims.generateFrameNumbers("player", { start: 12, end: 17 }),
+            frames: this.anims.generateFrameNumbers("player", { start: 5, end: 6 }),
             frameRate: 10,
             repeat: -1
         });
 
         this.anims.create({
             key: "andar-cima",
-            frames: this.anims.generateFrameNumbers("player", { start: 18, end: 23 }),
+            frames: this.anims.generateFrameNumbers("player", { start: 3, end: 4 }),
             frameRate: 10,
             repeat: -1
         });
