@@ -18,10 +18,8 @@ class CenaEscola extends Phaser.Scene {
         // Animação de Fade In no início da cena
         this.cameras.main.fadeIn(500);
         
-        // Adicionando o fundo e mudando a escala
-        var background = this.add.image(767.5, 365, 'inSchool').setOrigin(0.5, 0.5);
-        background.setScale(2.0);
-        
+        // Adicionando o fundo no centro do mapa sem redimensionamento
+        var background = this.add.image(496 / 2, 509 / 2, 'inSchool').setOrigin(0.5, 0.5);
         
         // Criando o jogador
         this.player = this.physics.add.sprite(400, 400, "player").setScale(0.07);
@@ -64,6 +62,20 @@ class CenaEscola extends Phaser.Scene {
             S: Phaser.Input.Keyboard.KeyCodes.S,
             D: Phaser.Input.Keyboard.KeyCodes.D
         });
+
+        this.cameras.main.startFollow(this.player);
+        this.cameras.main.setZoom(2); // Ajuste o valor conforme desejar
+        
+        // Configurar os limites do mundo e da câmera corretamente
+        this.physics.world.setBounds(0, 0, 496, 509);
+        this.cameras.main.setBounds(0, 0, 496, 509);
+
+        // Ajustando o zoom da câmera
+        this.cameras.main.setZoom(2.5);
+
+        // Fazendo a câmera seguir o jogador
+        this.cameras.main.startFollow(this.player);
+
     }
 
     update(){
