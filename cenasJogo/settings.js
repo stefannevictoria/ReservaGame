@@ -4,7 +4,7 @@ const config = {
     width: 1535,
     height: 730 ,
     physics: { default: "arcade" },
-    scene: [CenaMenu, CenaTermo, CenaBug]
+    scene: [CenaMenu, CenaTermo, CenaBug, CenaEscola]
 };
 
 // Criando o jogo
