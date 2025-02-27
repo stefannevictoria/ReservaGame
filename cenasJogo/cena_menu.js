@@ -15,8 +15,7 @@ class CenaMenu extends Phaser.Scene {
         this.add.image(750, 160, "logo").setScale(0.9);
 
         // Criando botão
-        var botao = this.add
-            .image(745, 365, "button")
+        var botao = this.add.image(745, 365, "button")
             .setScale(0.5)
             .setInteractive()
             .on("pointerdown", () => {
