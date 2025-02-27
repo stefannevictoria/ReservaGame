@@ -24,7 +24,7 @@ class CenaMenu extends Phaser.Scene {
 
                 // Apenas agora adicionamos o evento para trocar de cena corretamente
                 this.cameras.main.once("camerafadeoutcomplete", () => {
-                    this.scene.start("CenaJogo"); // Troque para a cena correta
+                    this.scene.start("CenaMenu"); // Troque para a cena correta
                 });
             });
 
