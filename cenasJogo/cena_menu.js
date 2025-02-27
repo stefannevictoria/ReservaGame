@@ -4,7 +4,7 @@ class CenaMenu extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("bg", "assets/menu_bg.PNG");
+        this.load.image("bg", "assets/fundosJogo/menu_bg.PNG");
         this.load.image("logo", "assets/logoHackerados.png");
         this.load.image("button", "assets/botoes/playButton.png");
     }

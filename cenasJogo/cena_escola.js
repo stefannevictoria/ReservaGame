@@ -5,7 +5,7 @@ class CenaEscola extends Phaser.Scene {
     }
 
     preload(){
-        this.load.image('inSchool', 'assets/mapaEscola.png');
+        this.load.image('inSchool', 'assets/fundosJogo/mapaOficial.png');
 
         this.load.spritesheet("player", "assets/user_walk/playerAnim.png", {
             frameWidth: 64,
