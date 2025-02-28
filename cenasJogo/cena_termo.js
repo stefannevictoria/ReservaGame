@@ -28,8 +28,11 @@ class CenaTermo extends Phaser.Scene {
         var botaoConcordar = this.add.image(737.5, 450, "agreeButton")
             .setInteractive()
             .on("pointerdown", () => {
-                this.cameras.main.fadeOut(2000)
-                });
+                if (!this.clicado) { // Impede múltiplos cliques
+                    this.clicado = true; 
+                    this.cameras.main.fadeOut(2000);
+                }
+            });
 
                 this.cameras.main.once("camerafadeoutcomplete", () => {
                     this.scene.start("CenaBug")}); 

@@ -39,7 +39,10 @@ class CenaBug extends Phaser.Scene {
         var botaozinho = this.add.image(737.5, 430, "botaoEntendido").setOrigin(0.5, 0.5)
             .setInteractive()
             .on("pointerdown", () => {
-                this.cameras.main.fadeOut(1350)
+                if (!this.clicado) { // Impede múltiplos cliques
+                    this.clicado = true; 
+                    this.cameras.main.fadeOut(1350);
+                }
             });
             botaozinho.setScale(0.75);
 
