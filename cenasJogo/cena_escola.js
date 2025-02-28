@@ -1,9 +1,10 @@
-//Criando classe para a cena 
+//Criar classe para a cena da escola
 class CenaEscola extends Phaser.Scene {
     constructor() {
         super({ key: 'CenaEscola'});
     }
 
+    //Carregar imagem e sprite
     preload(){
         this.load.image('inSchool', 'assets/fundosJogo/mapaOficial.png');
 
@@ -15,17 +16,17 @@ class CenaEscola extends Phaser.Scene {
 
     
     create() {
-        // Animação de Fade In no início da cena
+        //Adicionar animação de Fade In no início da cena
         this.cameras.main.fadeIn(500);
         
-        // Adicionando o fundo no centro do mapa sem redimensionamento
+        //Adicionar o fundo no centro do mapa sem redimensionamento
         var background = this.add.image(500 / 2, 515 / 2, 'inSchool').setOrigin(0.5, 0.5);
         
-        // Criando o jogador
+        //Criar o jogador
         this.player = this.physics.add.sprite(400, 400, "player").setScale(0.04);
         this.player.setCollideWorldBounds(true);
 
-        // Criando animações
+        //Criar animações juntamente a seus frames para cada posição em que ele caminhar
         this.anims.create({
             key: "andar-baixo",
             frames: this.anims.generateFrameNumbers("player", { start: 0, end: 2 }),
@@ -54,7 +55,7 @@ class CenaEscola extends Phaser.Scene {
             repeat: -1
         });
 
-        // Criando os controles
+        //Criar os controles
         this.cursor = this.input.keyboard.createCursorKeys();
         this.keys = this.input.keyboard.addKeys({
             W: Phaser.Input.Keyboard.KeyCodes.W,
@@ -63,28 +64,24 @@ class CenaEscola extends Phaser.Scene {
             D: Phaser.Input.Keyboard.KeyCodes.D
         });
 
+        //Colocar a câmera para seguir personagem e setar seu zoom
         this.cameras.main.startFollow(this.player);
-        this.cameras.main.setZoom(2); // Ajuste o valor conforme desejar
+        this.cameras.main.setZoom(2.5); 
         
-        // Configurar os limites do mundo e da câmera corretamente
+        
+        //Configurar os limites do mundo e da câmera corretamente
         this.physics.world.setBounds(-50, 0, 496, 509);
         this.cameras.main.setBounds(0, 0, 496, 509);
-
-        // Ajustando o zoom da câmera
-        this.cameras.main.setZoom(2.5);
-
-        // Fazendo a câmera seguir o jogador
-        this.cameras.main.startFollow(this.player);
 
     }
 
     update(){
             
-        // Definindo o estado inicial do personagem
+        //Definir o estado inicial do personagem
         let moving = false;
         this.player.setVelocity(0);
 
-        // Adicionando os comandos que vão rodar quando cada tecla são pressionadas
+        //Adicionar os comandos que vão rodar quando cada tecla são pressionadas
         if (this.cursor.left.isDown || this.keys.A.isDown) {
             this.player.setVelocityX(-160);
             this.player.anims.play("andar-esquerda", true);
