@@ -81,7 +81,7 @@ class CenaEscola extends Phaser.Scene {
         let moving = false;
         this.player.setVelocity(0);
 
-        //Adicionar os comandos que vão rodar quando cada tecla são pressionadas
+    //Adicionar os comandos que vão rodar quando cada tecla são pressionadas
         if (this.cursor.left.isDown || this.keys.A.isDown) {
             this.player.setVelocityX(-160);
             this.player.anims.play("andar-esquerda", true);

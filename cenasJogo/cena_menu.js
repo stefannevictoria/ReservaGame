@@ -17,17 +17,18 @@ class CenaMenu extends Phaser.Scene {
         this.add.image(750, 160, "logo").setScale(0.9);
 
         //Criar botão
-        var botao = this.add.image(745, 365, "button")
-            .setScale(0.5)
+        var botao = this.add.image(745, 365, "button").setScale(0.5)
             .setInteractive()
             .on("pointerdown", () => {
-                this.cameras.main.fadeOut(1350);
-
-                //Adiconar evento para troca de câmeras
-                this.cameras.main.once("camerafadeoutcomplete", () => {
-                    this.scene.start("CenaTermo");
-                });
+                if (!this.clicado) { // Impede múltiplos cliques
+                    this.clicado = true; 
+                    this.cameras.main.fadeOut(1350);
+                }
             });
+
+        this.cameras.main.once("camerafadeoutcomplete", () => {
+            this.scene.start("CenaTermo");
+        });
 
         //Animação de "pulsação" do botão
         this.tweens.add({
