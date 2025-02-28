@@ -1,8 +1,10 @@
+// Criar classe para a cena
 class CenaMenu extends Phaser.Scene {
     constructor() {
         super({ key: "CenaMenu" });
     }
 
+    //Fazer carregamento de imagens e sprite
     preload() {
         this.load.image("bg", "assets/fundosJogo/menu_bg.PNG");
         this.load.image("logo", "assets/logoHackerados.png");
@@ -10,24 +12,24 @@ class CenaMenu extends Phaser.Scene {
     }
 
     create() {
-        // Adicionando fundo e logo
+        //Adicionar fundo e logo
         this.add.image(700, 365, "bg").setScale(1);
         this.add.image(750, 160, "logo").setScale(0.9);
 
-        // Criando botão
+        //Criar botão
         var botao = this.add.image(745, 365, "button")
             .setScale(0.5)
             .setInteractive()
             .on("pointerdown", () => {
                 this.cameras.main.fadeOut(1350);
 
-                // Apenas agora adicionamos o evento para trocar de cena corretamente
+                //Adiconar evento para troca de câmeras
                 this.cameras.main.once("camerafadeoutcomplete", () => {
-                    this.scene.start("CenaTermo"); // Troque para a cena correta
+                    this.scene.start("CenaTermo");
                 });
             });
 
-        // Animação de "pulsação" do botão
+        //Animação de "pulsação" do botão
         this.tweens.add({
             targets: botao,
             scaleX: 0.55,
@@ -38,7 +40,7 @@ class CenaMenu extends Phaser.Scene {
             ease: "Sine.easeInOut",
         });
 
-        // Efeitos visuais ao passar o mouse
+        //Efeitos visuais ao passar o mouse
         botao.on("pointerover", () => {
             botao.setScale(0.45);
             botao.setAlpha(0.7);

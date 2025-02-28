@@ -1,4 +1,4 @@
-// Criar classe para a cena
+//Criar classe para a cena
 class CenaBug extends Phaser.Scene {
     constructor (){
         super({key: "CenaBug"})
