@@ -12,7 +12,7 @@ class CenaMenu extends Phaser.Scene {
     }
 
     create() {
-        //Adicionar fundo e logo
+        //Adicionar fundo e logo com suas devidas escalas
         this.add.image(700, 365, "bg").setScale(1);
         this.add.image(750, 160, "logo").setScale(0.9);
 

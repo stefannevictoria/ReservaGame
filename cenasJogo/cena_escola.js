@@ -19,7 +19,7 @@ class CenaEscola extends Phaser.Scene {
         //Adicionar animação de Fade In no início da cena
         this.cameras.main.fadeIn(500);
         
-        //Adicionar o fundo no centro do mapa sem redimensionamento
+        //Criar o fundo no centro do mapa sem redimensionamento
         var background = this.add.image(500 / 2, 515 / 2, 'inSchool').setOrigin(0.5, 0.5);
         
         //Criar o jogador

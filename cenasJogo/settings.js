@@ -1,4 +1,4 @@
-// Definindo as configurações do jogo
+//Definir as configurações do jogo
 const config = {
     type: Phaser.AUTO,
     width: 1535,
@@ -7,5 +7,5 @@ const config = {
     scene: [CenaMenu, CenaTermo, CenaBug, CenaEscola]
 };
 
-// Criando o jogo
+//Criar o jogo
 const game = new Phaser.Game(config);
