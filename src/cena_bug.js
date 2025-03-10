@@ -17,7 +17,7 @@ class CenaBug extends Phaser.Scene {
     create() {
         
         //Adicionar sprite do bug do fundo, diminuir e transparência
-        this.bug = this.add.sprite(737.5, 270, "glitch").setScale(7);
+        this.bug = this.add.sprite(480, 270, "glitch").setScale(5);
         this.bug.setAlpha(0.3)
 
         //Criar animação de bug e reproduzir
@@ -33,10 +33,12 @@ class CenaBug extends Phaser.Scene {
 
         //Criar variável "textin"
         var textin = 'Você está sendo hackeado!!!! Possui 10 minutos para resolver suas tasks, antes que seus dados sejam vazados'
-        this.add.text(737.5, 365, textin).setOrigin(0.5)
+        this.add.text(480, 270, textin)
+        .setScale(0.8)
+        .setOrigin(0.5)
 
         //Adicionar botão e atribuir a função de iniciar a animação de Fade Out 
-        var botaozinho = this.add.image(737.5, 430, "botaoEntendido").setOrigin(0.5, 0.5)
+        var botaozinho = this.add.image(480, 310, "botaoEntendido").setScale(0.7).setOrigin(0.5, 0.5)
             .setInteractive()
             .on("pointerdown", () => {
                 if (!this.clicado) { // Impede múltiplos cliques

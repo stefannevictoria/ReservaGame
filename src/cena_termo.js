@@ -11,7 +11,7 @@ class CenaTermo extends Phaser.Scene {
   create() {
     this.cameras.main.fadeIn(500);
 
-    const fundo = this.add.image(740, 365, "bg").setScale(1.2);
+    const fundo = this.add.image(420, 270, "bg").setScale(0.8);
     fundo.setAlpha(0.2);
 
     // Criar container de rolagem no HTML
@@ -70,7 +70,8 @@ class CenaTermo extends Phaser.Scene {
 
     // Criar botão "Jogar"
     var botaoConcordar = this.add
-      .image(737, 600, "agreeButton")
+      .image(480, 450, "agreeButton")
+      .setScale(0.6)
       .setInteractive()
       .setAlpha(0.5) // Inicialmente desativado
       .on("pointerdown", () => {

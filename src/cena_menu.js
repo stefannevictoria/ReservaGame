@@ -13,13 +13,13 @@ class CenaMenu extends Phaser.Scene {
 
   create() {
     //Adicionar fundo e logo com suas devidas escalas
-    this.add.image(700, 365, "bg").setScale(1);
-    this.add.image(750, 160, "logo").setScale(0.9);
+    this.add.image(480, 270, "bg").setScale(0.7);
+    this.add.image(480, 127, "logo").setScale(0.63);
 
     //Criar botão
     var botao = this.add
-      .image(745, 365, "button")
-      .setScale(0.5)
+      .image(480, 270, "button")
+      .setScale(0.4)
       .setInteractive()
       .on("pointerdown", () => {
         if (!this.clicado) {
@@ -36,8 +36,8 @@ class CenaMenu extends Phaser.Scene {
     //Animação de "pulsação" do botão
     this.tweens.add({
       targets: botao,
-      scaleX: 0.55,
-      scaleY: 0.55,
+      scaleX: 0.45,
+      scaleY: 0.45,
       duration: 500,
       yoyo: true,
       repeat: -1,
