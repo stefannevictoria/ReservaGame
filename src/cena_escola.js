@@ -49,15 +49,10 @@ class CenaEscola extends Phaser.Scene {
 
         colisaoLayer.setCollisionByExclusion([-1]);
 
-    const debugGraphics = this.add.graphics().setAlpha(0.7);
-    colisaoLayer.renderDebug(debugGraphics, {
-        tileColor: null,
-        collidingTileColor: new Phaser.Display.Color(243, 234, 48, 255), 
-    
-    })
 
 
-        this.player = this.physics.add.sprite(100, 200, "player").setScale(0.04);
+
+        this.player = this.physics.add.sprite(100, 200, "player").setScale(0.02).setSize(500,830).setOffset(680,1250);
         this.player.setOrigin(0.5, 0.5);
         this.player.setCollideWorldBounds(true);
 

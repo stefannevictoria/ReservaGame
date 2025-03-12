@@ -7,7 +7,7 @@ const config = {
         mode: Phaser.Scale.FIT,
     
     },
-    physics: { default: "arcade", arcade: { debug: true}},
+    physics: { default: "arcade", arcade: { debug: false}},
     scene: [CenaMenu, CenaTermo, CenaBug, CenaEscola]
 };
 
